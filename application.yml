@@ -9,7 +9,7 @@ spec:
   source:
     repoURL: https://github.com/Hemalatha900/SampleApp.git
     targetRevision: HEAD
-    path: deployment
+    path: dev
   destination:
     server: https://kubernetes.default.svc
     namespace: myapp
