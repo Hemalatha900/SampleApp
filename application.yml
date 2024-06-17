@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kaind: Application
+metadata:
+  name: helloworld-argo-application
+  namespace: argocdsample
+spec:
+  project: default
+
+  source:
+    repoURL: https://github.com/Hemalatha900/SampleApp.git
+    targetRevision: HEAD
+    path: deployment
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: myapp
+
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
+
+    automated:
+      selfHeal: true
+      prune: true
